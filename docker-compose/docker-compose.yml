@@ -1,0 +1,25 @@
+version: '3'
+#  Spécifie la version de fichier Docker Compose.
+services:
+#  Une liste des services Docker à créer et à exécuter.
+  web:
+  #  Nom du premier service.
+    image: nginx:latest
+    #  Image Docker à utiliser pour le service.
+    ports:
+    #  Port sur la machine hôte à un port dans le conteneur.
+      - "5000:5000"
+      #  Le port 8080 sur l'hôte au port 80 dans le conteneur.
+    build: ./ap
+    volumes:
+      - ./app:/app
+    depends_on:
+      - redis-container
+    redis-container:
+        image: redis
+
+#Ce script est un fichier Docker Compose qui décrit deux services qui seront exécutés dans des conteneurs Docker: 
+#un service Web et un service Redis.
+
+
+
