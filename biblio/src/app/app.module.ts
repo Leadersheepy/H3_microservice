@@ -10,9 +10,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
-    BrowserModule,
-    NgbModule,
-    AppRoutingModule,
     AppComponent,
     HomeComponent,
     LivreComponent,

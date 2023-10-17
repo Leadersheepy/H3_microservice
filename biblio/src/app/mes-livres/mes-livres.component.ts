@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./mes-livres.component.css']
 })
 export class MesLivresComponent {
+    userName = 'John Doe';
+    userEmail = 'john.doe@example.com';
+    userPhone = '+1234567890';
 
 }

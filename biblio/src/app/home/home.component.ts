@@ -1,22 +1,21 @@
-import { Component } from '@angular/core';
+
+import { Component, OnInit } from '@angular/core';
+import { Livre } from '../models/livre.model';
+import { LivreService } from '../services/livre.service';
 
 @Component({
     selector: 'app-home',
     templateUrl: './home.component.html',
     styleUrls: ['./home.component.css']
 })
-export class HomeComponent {
-    books = [
-        {
-          title: 'Book Title 1',
-          author: 'Author 1',
-          summary: 'Summary of Book 1'
-        },
-        {
-          title: 'Book Title 2',
-          author: 'Author 2',
-          summary: 'Summary of Book 2'
-        },
-        // Add more books here
-      ];
+export class HomeComponent implements OnInit {
+
+  livres: Livre[] = [];
+
+  constructor(private livreService: LivreService) { }
+
+  ngOnInit(): void {
+    this.livres = this.livreService.getLivres();
+  }
+
 }
