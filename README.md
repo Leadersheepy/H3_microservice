@@ -7,4 +7,4 @@
 ### Devoir Docker-compose
 Erreurs :
 - Docker désintallé de mon pc (va savoir pourquoi ? )
-- Deamon docker start ne fonctionne pas (réparé)
+- Deamon docker start ne fonctionne pas (réparé => le problème vient de mon pc Linux)
