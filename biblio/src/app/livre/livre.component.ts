@@ -9,7 +9,7 @@ import { LivreService } from '../services/livre.service';
   styleUrls: ['./livre.component.css']
 })
 export class LivreComponent implements OnInit {
-  livre!: Livre; // Add ! to indicate that livre will be initialized later
+  livre: Livre | undefined; // Utilisez "undefined" pour indiquer qu'il peut être null ou non initialisé
 
   constructor(
     private livreService: LivreService,
@@ -17,8 +17,9 @@ export class LivreComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    const bookId = +this.route.snapshot.paramMap.get('id')!; // Add ! to indicate that the value will not be null
-    this.livre = this.livreService.getLivreById(bookId); // Fix typo in method name
+    const bookId = +this.route.snapshot.paramMap.get('id')!; // Ajoutez "!" pour indiquer que la valeur ne sera pas null
+    this.livreService.getLivreById(bookId).subscribe(data => {
+      this.livre = data;
+    });
   }
 }
-

@@ -21,16 +21,13 @@
 </nav>
 <div class="container mt-4">
   <h1 class="text-center text-primary mb-4">Book Details</h1>
-  <div class="row">
-    <div class="col-md-8 offset-md-2">
-      <div class="card">
-        <img src="book-cover.jpg" class="card-img-top" alt="Book Cover">
-        <div class="card-body">
-          <h5 class="card-title text-primary">{{ livre.title }}</h5>
-          <p class="card-text"><strong>Author:</strong> {{ livre.author }}</p>
-          <p class="card-text"><strong>Summary:</strong> {{ livre.summary }}</p>
-        </div>
-      </div>
+  <div *ngIf="livre" class="card">
+    <img [src]="livre.cover" class="card-img-top" alt="Book Cover">
+    <div class="card-body">
+      <h5 class="card-title text-primary">{{ livre.title }}</h5>
+      <p class="card-text"><strong>Author:</strong> {{ livre.author }}</p>
+      <p class="card-text"><strong>Summary:</strong> {{ livre.summary }}</p>
     </div>
   </div>
 </div>
+
