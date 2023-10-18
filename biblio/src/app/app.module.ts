@@ -8,13 +8,14 @@ import { LivreComponent } from './livre/livre.component';
 import { MesLivresComponent } from './mes-livres/mes-livres.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
+import { LivreService } from './services/livre.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     LivreComponent,
-    MesLivresComponent
+    MesLivresComponent,
   ],
   imports: [
     BrowserModule,
@@ -22,7 +23,7 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
     RouterModule
   ],
-  providers: [],
+  providers: [LivreService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
