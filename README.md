@@ -1,5 +1,13 @@
 # H3_microservice
 
+## DOCKER HUB
+https://hub.docker.com/repository/docker/marinouh/biblio/general
+
+## DOCKER
+![image](https://github.com/Leadersheepy/H3_microservice/assets/43178189/72d2c0c6-8121-4206-856a-b7d01f64c95d)
+![image](https://github.com/Leadersheepy/H3_microservice/assets/43178189/a972c1ba-ea38-45f2-8019-b1fc4e9ea2b2)
+
+
 # Rapport mi-parcours
 
 ## Description de mon projet
