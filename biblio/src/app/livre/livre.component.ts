@@ -18,8 +18,8 @@ export class LivreComponent implements OnInit {
 
   ngOnInit(): void {
     const bookId = +this.route.snapshot.paramMap.get('id')!; // Ajoutez "!" pour indiquer que la valeur ne sera pas null
-/*     this.livreService.getLivreById(bookId).subscribe(data => {
+    this.livreService.getLivreById(bookId).subscribe(data => {
       this.livre = data;
-    }); */
+    });
   }
 }

@@ -9,6 +9,7 @@ import { MesLivresComponent } from './mes-livres/mes-livres.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { LivreService } from './services/livre.service';
+import { CreerComponent } from './creer/creer.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { LivreService } from './services/livre.service';
     HomeComponent,
     LivreComponent,
     MesLivresComponent,
+    CreerComponent,
   ],
   imports: [
     BrowserModule,

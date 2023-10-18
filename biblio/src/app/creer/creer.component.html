@@ -25,19 +25,17 @@
   </div>
 </nav>
 
-<div class="container mt-4">
-  <h1 class="text-center text-primary mb-4">Détail du livre</h1>
-  <div *ngIf="livre" class="card">
-    <img [src]="livre.cover" class="card-img-top" alt="Book Cover">
-    <div class="card-body">
-      <h5 class="card-title text-primary">{{ livre.title }}</h5>
-      <p class="card-text"><strong>Auteur:</strong> {{ livre.author }}</p>
-      <p class="card-text"><strong>Résumé:</strong> {{ livre.summary }}</p>
-      <p class="card-text"><strong>Est-il prété ? :</strong> {{ livre.isLent }}</p>
-      <p class="card-text"><strong>A qui ? :</strong> {{ livre.lentTo }}</p>
-      <p class="card-text"><strong>Quand :</strong> {{ livre.lentDate }}</p>
-      <p class="card-text"><strong>Retour :</strong> {{ livre.lentReturnDate }}</p>
+<div class="container">
+  <h2>Ajouter un livre</h2>
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="title">Titre :</label>
+      <input type="text" id="title" name="title" class="form-control" required>
     </div>
-  </div>
+    <div class="form-group">
+      <label for="author">Auteur :</label>
+      <input type="text" id="author" name="author"  class="form-control" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Ajouter</button>
+  </form>
 </div>
-

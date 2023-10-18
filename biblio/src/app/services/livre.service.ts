@@ -16,4 +16,16 @@ export class LivreService {
   getLivreById(id: number): Observable<Livre> {
     return this.http.get<Livre>(`${this.apiUrl}/livres/${id}`);
   }
+
+  addLivre(livre: Livre): Observable<Livre> {
+    return this.http.post<Livre>(`${this.apiUrl}/livres`, livre);
+  }
+
+  updateLivre(livre: Livre): Observable<Livre> {
+    return this.http.put<Livre>(`${this.apiUrl}/livres/${livre.id}`, livre);
+  }
+
+  deleteLivre(id: number): Observable<any> {
+    return this.http.delete(`${this.apiUrl}/livres/${id}`);
+  }
 }
