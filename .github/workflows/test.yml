@@ -28,10 +28,10 @@ jobs:
 
       - name: Build and test
         run: npm run build && npm run test
-        
+
       - name: Health Check
         run: |
-          if docker ps --filter "name=biblio" --filter "name=back-biblio" | grep -q "Up"; then
+          if docker ps --filter "name=biblio-1" --filter "name=back-biblio-1" | grep -q "Up"; then
             echo "All containers are running"
             exit 0
           else
