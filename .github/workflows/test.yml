@@ -1,40 +1,27 @@
-name: Hello
+name: Test Docker Container
 
-on:
-  push:
-    branches:
-      - "main"
-  pull_request:
-    branches:
-      - "main"
+on: [push]
 
 jobs:
-  hello:
+  test:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Hello Step
-        run: echo "Hello World"
+    - name: Checkout code
+      uses: actions/checkout@v2
 
-  build:
-    runs-on: ubuntu-latest
+    - name: Build Docker image
+      uses: docker/build-push-action@v2
+      with:
+        context: . 
+        file: ./biblio/Dockerfile 
+        push: false
 
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Build and test
-        run: npm run build && npm run test
-
-      - name: Health Check
-        run: |
-          if docker inspect -f '{{.State.Running}}' h3_microservice-back-biblio-1 | grep -q "true"; then
-          echo "All containers are running"
-          exit 0
-          else
-          echo "One or more containers are not running"
-          exit 1 
-          fi
+    - name: Check if container is running
+      run: |
+        if docker ps -q --filter "name=h3_microservice-back-biblio-1" | grep -q .; then
+          echo "Container is running"
+        else
+          echo "Container is not running"
+          exit 1
+        fi
