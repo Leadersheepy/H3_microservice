@@ -31,7 +31,7 @@ jobs:
 
       - name: Health Check
         run: |
-          if docker ps --filter "name=biblio-1" --filter "name=back-biblio-1" | grep -q "Up"; then
+          if docker ps --filter "name=h3_microservice-biblio" --filter "name=h3_microservice-back-biblio" | grep -q "Up"; then
             echo "All containers are running"
             exit 0
           else
