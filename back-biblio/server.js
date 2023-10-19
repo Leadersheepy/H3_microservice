@@ -5,7 +5,7 @@ app.use(express.json());
 
 // Route racine pour accueillir les visiteurs
 app.get('/', (req, res) => {
-    res.json({message: 'Bienvenue sur votre serveur API !'});
+    res.json({ message: 'Bienvenue sur votre serveur API !' });
 });
 
 // Écoute du serveur sur le port spécifié
@@ -106,4 +106,15 @@ app.delete('/livres/:id', (req, res) => {
         console.log('Suppression du livre réussie.');
         res.json({ message: 'Livre supprimé avec succès' });
     });
+});
+
+
+const express = require('express');
+const swaggerUi = require('swagger-ui-express');
+const swaggerDocument = require('./swagger.json'); // Remplacez par le chemin vers votre fichier Swagger
+
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+
+app.listen(port, () => {
+    console.log(`Serveur API en cours d'exécution sur le port ${port}`);
 });
