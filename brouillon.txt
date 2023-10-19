@@ -1,4 +1,4 @@
-name: Hello
+name: Build and Test
 
 on:
   push:
@@ -9,12 +9,18 @@ on:
     - 'main'
 
 jobs:
-  hello:
+  build:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Hello Step
-      run: echo "Hello World"
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Build and Test
+      run: |
+        npm install
+        npm run build
+        npm test
 
     - name: Health Check
       run: |
