@@ -17,4 +17,4 @@ jobs:
         run: echo "Hello World"
 
       - name: Health Check
-        run: GitHub/H3_microservice/health-check.sh
+        run: ../scripts/health-check.sh
