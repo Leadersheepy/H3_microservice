@@ -1,5 +1,10 @@
 # H3_microservice
 
+#### Swagger
+http://localhost:5000/api-docs/#/
+![image](https://github.com/Leadersheepy/H3_microservice/assets/43178189/a60f6719-ee7a-4424-b552-463a609de91c)
+
+
 #### Déploiement & production 
 - SSL et HTTPS : openssl ne s'installe pas sur mon pc
 
