@@ -16,5 +16,25 @@ jobs:
       - name: Hello Step
         run: echo "Hello World"
 
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build and test
+        run: npm run build && npm run test
+        
       - name: Health Check
-        run: ./scripts/health-check.sh
+        run: |
+          if docker ps --filter "name=biblio" --filter "name=back-biblio" | grep -q "Up"; then
+            echo "All containers are running"
+            exit 0
+          else
+            echo "One or more containers are not running"
+            exit 1
+          fi
