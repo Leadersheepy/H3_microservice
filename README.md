@@ -1,5 +1,8 @@
 # H3_microservice
 
+#### Déploiement & production 
+- SSL et HTTPS : openssl ne s'installe pas sur mon pc
+
 #### Test
 Abandonné car ça ne marche pas 
 
