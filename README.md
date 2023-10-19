@@ -1,5 +1,20 @@
 # H3_microservice
 
+
+#### docker-swarm 
+![image](https://github.com/Leadersheepy/H3_microservice/assets/43178189/b38dcfbb-050e-40dd-9295-7648a32c397a)
+![image](https://github.com/Leadersheepy/H3_microservice/assets/43178189/60c89f8e-9c38-454a-8e96-5c6922679470)
+![image](https://github.com/Leadersheepy/H3_microservice/assets/43178189/1e0ea508-97b0-4a07-9230-08bcca315d69)
+
+
+#### Swagger
+http://localhost:5000/api-docs/#/
+![image](https://github.com/Leadersheepy/H3_microservice/assets/43178189/a60f6719-ee7a-4424-b552-463a609de91c)
+
+
+#### Déploiement & production 
+- SSL et HTTPS : openssl ne s'installe pas sur mon pc
+
 #### Test
 Abandonné car ça ne marche pas 
 
