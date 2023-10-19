@@ -3,45 +3,45 @@ services:
   nginx-server:
     image: nginx:alpine
     ports:
-      - "8083:80"
+      - "8083:80"   # Redirige le port 8083 de l'hôte vers le port 80 du conteneur
     container_name: nginx-container
-    restart: always
+    restart: always  # Redémarre automatiquement le conteneur en cas d'échec
 
   mysql-db:
     image: mysql:latest
     environment:
-      MYSQL_ROOT_PASSWORD: root123
-      MYSQL_DATABASE: livredb
+      MYSQL_ROOT_PASSWORD: root123  # Mot de passe root MySQL
+      MYSQL_DATABASE: livredb  # Nom de la base de données
     ports:
-      - "3307:3306"
+      - "3307:3306"   # Redirige le port 3307 de l'hôte vers le port 3306 du conteneur
     container_name: mysql-container
     restart: always
 
   biblio:
     build:
-      context: ./biblio
-      dockerfile: Dockerfile
+      context: ./biblio  # Chemin du contexte pour le build
+      dockerfile: Dockerfile  # Fichier Dockerfile pour ce service
     ports:
-      - "80:80"
+      - "80:80"   # Redirige le port 80 de l'hôte vers le port 80 du conteneur
 
   back-biblio:
     build:
-      context: ./back-biblio
-      dockerfile: Dockerfile
+      context: ./back-biblio  # Chemin du contexte pour le build
+      dockerfile: Dockerfile  # Fichier Dockerfile pour ce service
     ports:
-      - "8082:8081"
+      - "8082:8081"   # Redirige le port 8082 de l'hôte vers le port 8081 du conteneur
 
   test:
     build:
-      context: .
-      dockerfile: Dockerfile.test
+      context: .  # Utilise le contexte actuel
+      dockerfile: Dockerfile.test  # Fichier Dockerfile pour ce service
     depends_on:
-      - biblio
-    command: npm run test
+      - biblio  # Dépend du service "biblio" pour s'assurer qu'il soit prêt
+    command: npm run test  # Commande pour exécuter les tests
 
   prometheus:
     image: prom/prometheus
     ports:
-      - "9090:9090" 
+      - "9090:9090"  # Redirige le port 9090 de l'hôte vers le port 9090 du conteneur
     volumes:
-      - ./prometheus-config/prometheus.yml:/etc/prometheus/prometheus.yml
+      - ./prometheus-config/prometheus.yml:/etc/prometheus/prometheus.yml  # Montage du fichier de configuration Prometheus

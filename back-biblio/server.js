@@ -1,3 +1,4 @@
+// Importation des modules nécessaires
 const express = require('express');
 const mysql = require('mysql2');
 const cors = require('cors');
@@ -6,14 +7,12 @@ const swaggerJsDoc = require('swagger-jsdoc');
 const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('./swagger.json');
 
-const app = express();
-const port = process.env.PORT || 3000;
-
 const amqp = require('amqplib');
 const connection2 = await amqp.connect('amqp://localhost');
 
 const channel = await connection.createChannel();
 
+// Connexion à RabbitMQ
 const queueName = 'ma-file-dattente';
 const message = 'Hello, RabbitMQ!';
 channel.assertQueue(queueName);
@@ -22,6 +21,7 @@ channel.consume(queueName, (message) => {
   console.log(`Received message: ${message.content.toString()}`);
 });
 
+// Connexion à la base de données MySQL
 const connection = mysql.createConnection({
     host: 'localhost',
     user: 'marine',
@@ -29,6 +29,7 @@ const connection = mysql.createConnection({
     database: 'livredb'
 });
 
+// Vérification de la connexion à la base de données
 connection.connect((err) => {
     if (err) {
         console.error('Erreur de connexion à la base de données : ' + err.stack);
@@ -37,9 +38,16 @@ connection.connect((err) => {
     console.log('Connecté à la base de données MySQL.');
 });
 
+
+// Configuration de l'application Express
+const app = express();
+const port = process.env.PORT || 3000;
 app.use(express.json());
 app.use(cors());
 
+
+
+// Définition des routes de l'API
 app.get('/', (req, res) => {
     res.json({ message: 'Bienvenue sur votre serveur API !' });
 });
@@ -109,9 +117,12 @@ app.delete('/livres/:id', (req, res) => {
     });
 });
 
+// Démarrage du serveur
 app.listen(5000, () => {
     console.log(`Serveur API en cours d'exécution sur le port ${port}`);
 });
 
-
+// Configuration de Swagger pour la documentation de l'API
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+
+

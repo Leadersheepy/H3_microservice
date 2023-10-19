@@ -1,40 +1,40 @@
-name: Hello
+name: Test  # Le nom de ce workflow est "Hello"
 
 on:
   push:
     branches:
-      - "main"
+      - "main"  # Le workflow sera déclenché lorsqu'il y a un "push" sur la branche "main"
   pull_request:
     branches:
-      - "main"
+      - "main"  # Le workflow sera également déclenché lorsqu'une "pull request" est créée sur la branche "main"
 
 jobs:
   hello:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest  # Ce job s'exécutera sur une machine virtuelle Ubuntu
 
-    steps:
-      - name: Hello Step
-        run: echo "Hello World"
+    steps:  # Les étapes de ce job commencent ici
+      - name: Hello Step  # Le nom de cette étape est "Hello Step"
+        run: echo "Hello World"  # Cette étape exécute une simple commande qui affiche "Hello World"
 
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest  # Ce job s'exécutera également sur une machine virtuelle Ubuntu
 
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+    steps:  # Les étapes de ce job commencent ici
+      - name: Checkout code  # Le nom de cette étape est "Checkout code"
+        uses: actions/checkout@v2  # Cette étape utilise une action pour récupérer le code source depuis le référentiel
 
-      - name: Install dependencies
-        run: npm install
+      - name: Install dependencies  # Le nom de cette étape est "Install dependencies"
+        run: npm install  # Cette étape exécute la commande "npm install" pour installer les dépendances
 
-      - name: Build and test
-        run: npm run build && npm run test
+      - name: Build and test  # Le nom de cette étape est "Build and test"
+        run: npm run build && npm run test  # Cette étape exécute les commandes pour construire et tester l'application
 
-      - name: Health Check
-        run: |
+      - name: Health Check  # Le nom de cette étape est "Health Check"
+        run: |  # Cette étape exécute un script shell
           if docker ps --filter "name=biblio-1" --filter "name=back-biblio-1" | grep -q "Up"; then
-            echo "All containers are running"
-            exit 0
+            echo "All containers are running"  # Si les conteneurs sont en cours d'exécution, affiche "Tous les conteneurs sont en cours d'exécution"
+            exit 0  # Termine l'étape avec un code de sortie 0 (pas d'erreur)
           else
-            echo "One or more containers are not running"
-            exit 1
+            echo "One or more containers are not running"  # Si au moins un conteneur ne fonctionne pas, affiche "Un ou plusieurs conteneurs ne sont pas en cours d'exécution"
+            exit 1  # Termine l'étape avec un code de sortie 1 (erreur)
           fi
