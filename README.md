@@ -12,8 +12,12 @@ Description brève de votre projet.
 6. [Docker](#docker)
 7. [Rapport mi-parcours](#rapport-mi-parcours)
 
-## Aperçu
 
+### Azure
+Je n'ai pas eu le temps de l'intégrer...
+
+
+## Aperçu
 Expliquez brièvement en quoi consiste votre projet et fournissez une démonstration si possible.
 
 ## Installation
