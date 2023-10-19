@@ -1,0 +1,27 @@
+name: Build and Test
+
+on:
+  push:
+    branches: 
+    - 'main'
+  pull_request:
+    branches: 
+    - 'main'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Build and Test
+      run: |
+        npm install
+        npm run build
+        npm test
+
+    - name: Health Check
+      run: |
+        ./health-check.sh
