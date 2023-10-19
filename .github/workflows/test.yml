@@ -18,4 +18,4 @@ jobs:
 
     - name: Health Check
       run: |
-        ./health-check.sh
+        ../health-check.sh
