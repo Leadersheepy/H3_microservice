@@ -31,7 +31,7 @@ jobs:
 
       - name: Health Check
         run: |
-          if docker inspect -f '{{.State.Running}}' h3_microservice-biblio-1 h3_microservice-back-biblio-1 | grep -q "true"; then
+          if docker inspect -f '{{.State.Running}}' biblio-1 back-biblio-1 | grep -q "true"; then
           echo "All containers are running"
           exit 0
           else
