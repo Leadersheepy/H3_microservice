@@ -1,9 +1,5 @@
 # H3_microservice
 
-# Titre de votre Projet
-
-Description brève de votre projet.
-
 ## Table des matières
 1. [Aperçu](#aperçu)
 2. [Installation](#installation)
@@ -11,10 +7,6 @@ Description brève de votre projet.
 5. [Swagger](#swagger)
 6. [Docker](#docker)
 7. [Rapport mi-parcours](#rapport-mi-parcours)
-
-
-### Azure
-Je n'ai pas eu le temps de l'intégrer...
 
 
 ## Aperçu
@@ -40,7 +32,8 @@ npm start
 - SSL et HTTPS : openssl ne s'installe pas sur mon pc
 #### Test
 Abandonné car ça ne marche pas 
-
+#### Azure
+Je n'ai pas eu le temps de l'intégrer...
 
 ### Swagger
 http://localhost:5000/api-docs/#/
