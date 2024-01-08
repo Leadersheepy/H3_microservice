@@ -12,8 +12,8 @@ const swaggerDocument = require('./swagger.json');
 const amqp = require('amqplib');
 
 async function start() {
-    const pool = await amqp.connect('amqp://localhost');
-    const channel = await pool.createChannel();
+    const rabbitMqPool = await amqp.connect('amqp://localhost');
+    const channel = await rabbitMqPool.createChannel();
 
     // Connexion à RabbitMQ
     const queueName = 'ma-file-dattente';
