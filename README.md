@@ -17,6 +17,12 @@ Expliquez brièvement en quoi consiste votre projet et fournissez une démonstra
 ![image](https://github.com/Leadersheepy/H3_microservice/assets/43178189/3b64ba9c-407a-4d2a-8dd9-4e8e7801e7f3)
 ![image](https://github.com/Leadersheepy/H3_microservice/assets/43178189/afa8dc1b-b1c4-41a6-8151-80a1f7a33172)
 
+## Schema 
+![image](https://github.com/Leadersheepy/H3_microservice/assets/43178189/157db7dd-766e-4722-a8a3-d71e869de563)
+
+## Dockerfile 
+![image](https://github.com/Leadersheepy/H3_microservice/assets/43178189/457601c1-12ee-423f-93e7-b8a21db18746)
+
 
 ## Installation
 npm install
