@@ -41,6 +41,10 @@ Abandonné car ça ne marche pas
 #### Azure
 Je n'ai pas eu le temps de l'intégrer...
 
+### Rabbit
+![image](https://github.com/Leadersheepy/H3_microservice/assets/43178189/69dfc11f-e202-469d-b53e-c346869e1459)
+
+
 ### Swagger
 http://localhost:5000/api-docs/#/
 ![image](https://github.com/Leadersheepy/H3_microservice/assets/43178189/a60f6719-ee7a-4424-b552-463a609de91c)
