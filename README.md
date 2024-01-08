@@ -49,7 +49,8 @@ npm start
 #### Déploiement & production 
 - SSL et HTTPS : openssl ne s'installe pas sur mon pc
 #### Test
-Abandonné car ça ne marche pas 
+![image](https://github.com/Leadersheepy/H3_microservice/assets/43178189/ec5e777b-44cb-4b96-b3c9-6de586e58e42)
+
 #### Azure
 Je n'ai pas eu le temps de l'intégrer...
 
