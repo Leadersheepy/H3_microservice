@@ -12,6 +12,15 @@
 ## Aperçu
 Expliquez brièvement en quoi consiste votre projet et fournissez une démonstration si possible.
 
+## test front
+marine@marine-ThinkPad-T440s:~/Bureau/H3_microservice$ chmod +x check_front.sh
+marine@marine-ThinkPad-T440s:~/Bureau/H3_microservice$ sudo ./check_front.sh
+![image](https://github.com/Leadersheepy/H3_microservice/assets/43178189/e15326ce-2d4e-459f-a393-80a88648e951)
+
+## nginx
+![image](https://github.com/Leadersheepy/H3_microservice/assets/43178189/dee52193-0672-4657-b7cb-86fb36f953ee)
+
+
 ## Site
 ![image](https://github.com/Leadersheepy/H3_microservice/assets/43178189/dd672f6f-c9ee-433a-b75e-e648f85acf0d)
 ![image](https://github.com/Leadersheepy/H3_microservice/assets/43178189/3b64ba9c-407a-4d2a-8dd9-4e8e7801e7f3)
@@ -35,6 +44,9 @@ npm start
 #### prometheus
 ![image](https://github.com/Leadersheepy/H3_microservice/assets/43178189/73a592d2-b189-404a-a9c3-9bebee783e62)
 ![image](https://github.com/Leadersheepy/Docker_devoirMK/assets/43178189/8b2f17f6-8a89-4e9c-8a75-2db03d0acbad)
+![image](https://github.com/Leadersheepy/H3_microservice/assets/43178189/545e6620-dd3c-4d1f-8a57-e3aea95ef2ac)
+![image](https://github.com/Leadersheepy/H3_microservice/assets/43178189/6cfe15a7-28ec-420f-9c46-514a84af9ca3)
+
 
 ### test
 ![image](https://github.com/Leadersheepy/Docker_devoirMK/assets/43178189/a63aa49c-3f3d-4d9d-a3c1-cdd60cebdc35)
