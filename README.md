@@ -22,6 +22,12 @@ npm start
 
 #### prometheus
 ![image](https://github.com/Leadersheepy/H3_microservice/assets/43178189/73a592d2-b189-404a-a9c3-9bebee783e62)
+![image](https://github.com/Leadersheepy/Docker_devoirMK/assets/43178189/8b2f17f6-8a89-4e9c-8a75-2db03d0acbad)
+
+### test
+![image](https://github.com/Leadersheepy/Docker_devoirMK/assets/43178189/a63aa49c-3f3d-4d9d-a3c1-cdd60cebdc35)
+![image](https://github.com/Leadersheepy/Docker_devoirMK/assets/43178189/ee546f03-c5d8-4979-8c8a-b5fd894673be)
+
 
 #### docker-swarm 
 ![image](https://github.com/Leadersheepy/H3_microservice/assets/43178189/b38dcfbb-050e-40dd-9295-7648a32c397a)
@@ -38,6 +44,7 @@ Je n'ai pas eu le temps de l'intégrer...
 ### Swagger
 http://localhost:5000/api-docs/#/
 ![image](https://github.com/Leadersheepy/H3_microservice/assets/43178189/a60f6719-ee7a-4424-b552-463a609de91c)
+
 
 ### Docker 
 #### DOCKER HUB
