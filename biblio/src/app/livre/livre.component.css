@@ -70,3 +70,12 @@ footer p {
   color: #999;
   text-align: center;
 }
+
+.taille{
+  width: 100px;
+  margin: 0 auto;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}

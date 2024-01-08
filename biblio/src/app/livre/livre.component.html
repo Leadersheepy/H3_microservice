@@ -28,7 +28,7 @@
 <div class="container mt-4">
   <h1 class="text-center text-primary mb-4">Détail du livre</h1>
   <div *ngIf="livre" class="card">
-    <img [src]="livre.cover" class="card-img-top" alt="Book Cover">
+    <img [src]="'assets/images/' + livre.cover" class="taille card-img-top" alt="Book Cover">
     <div class="card-body">
       <h5 class="card-title text-primary">{{ livre.title }}</h5>
       <p class="card-text"><strong>Auteur:</strong> {{ livre.author }}</p>

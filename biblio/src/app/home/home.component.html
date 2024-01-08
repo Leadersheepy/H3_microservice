@@ -27,8 +27,8 @@
     <div class="col-md-4 mb-4" *ngFor="let livre of livres">
       <div class="card h-100">
         <!-- <img [src]="randomImage" class="img-fluid" alt="Image aléatoire"> -->
-        <img [src]="livre.cover" class="card-img-top" alt="Book Cover">
-        <div class="card-body">
+        <img [src]="'assets/images/' + livre.cover" class="card-img-top" alt="Book Cover">
+          <div class="card-body">
           <h5 class="card-title text-primary">{{ livre.title }}</h5>
           <p class="card-text"><strong>Auteur:</strong> {{ livre.author }}</p>
           <p class="card-text"><strong>Résumé:</strong> {{ livre.summary }}</p>

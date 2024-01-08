@@ -17,9 +17,11 @@ export class LivreComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    const bookId = +this.route.snapshot.paramMap.get('id')!; // Ajoutez "!" pour indiquer que la valeur ne sera pas null
-    this.livreService.getLivreById(bookId).subscribe(data => {
-      this.livre = data;
-    });
+    const id = this.route.snapshot.paramMap.get('id');
+    if (id !== null) {
+      this.livreService.getLivreById(Number(id)).subscribe((data: any) => {
+        this.livre = data;
+      });
+    }
   }
 }

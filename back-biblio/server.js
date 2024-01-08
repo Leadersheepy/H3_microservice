@@ -76,16 +76,22 @@ app.get('/livres', (req, res) => {
 
 app.get('/livres/:id', (req, res) => {
     const bookId = req.params.id;
-    pool.query('SELECT * FROM livres WHERE id = ?', [bookId], (error, results) => {
+    pool.query('SELECT * FROM livres WHERE id = $1', [bookId], (error, results) => {
         if (error) {
             console.error('Erreur lors de la récupération du livre : ' + error.message);
             res.status(500).json({ message: 'Erreur serveur' });
             return;
         }
         console.log('Récupération du livre par ID réussie.');
-        res.json(results[0], rows);
+        if (results.rows.length === 0) {
+            res.status(404).json({ message: 'Livre non trouvé' });
+            return;
+        }
+        res.json(results.rows[0]);
     });
 });
+
+
 
 app.post('/livres', (req, res) => {
     const newBook = req.body;

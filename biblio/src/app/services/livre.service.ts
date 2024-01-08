@@ -5,27 +5,27 @@ import { Livre } from '../models/livre.model';
 
 @Injectable()
 export class LivreService {
-  private apiUrl = 'http://localhost:3000';
+  private apiUrl = 'http://localhost:5000/';
 
   constructor(private http: HttpClient) {}
 
   getLivres(): Observable<Livre[]> {
-    return this.http.get<Livre[]>(`${this.apiUrl}/livres`);
+    return this.http.get<Livre[]>(`${this.apiUrl}livres`);
   }
 
-  getLivreById(id: number): Observable<Livre> {
-    return this.http.get<Livre>(`${this.apiUrl}/livres/${id}`);
+  getLivreById(id: number): Observable<any> {
+    return this.http.get(`${this.apiUrl}livres/${id}`);
   }
 
   addLivre(livre: Livre): Observable<Livre> {
-    return this.http.post<Livre>(`${this.apiUrl}/livres`, livre);
+    return this.http.post<Livre>(`${this.apiUrl}livres`, livre);
   }
 
   updateLivre(livre: Livre): Observable<Livre> {
-    return this.http.put<Livre>(`${this.apiUrl}/livres/${livre.id}`, livre);
+    return this.http.put<Livre>(`${this.apiUrl}livres/${livre.id}`, livre);
   }
 
   deleteLivre(id: number): Observable<any> {
-    return this.http.delete(`${this.apiUrl}/livres/${id}`);
+    return this.http.delete(`${this.apiUrl}livres/${id}`);
   }
 }
