@@ -1,41 +1,51 @@
 // Importation des modules nécessaires
 const express = require('express');
-const mysql = require('mysql2');
+//const mysql = require('mysql2');
 const cors = require('cors');
+
+const { Pool } = require('pg');
 
 const swaggerJsDoc = require('swagger-jsdoc');
 const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('./swagger.json');
 
 const amqp = require('amqplib');
-const connection2 = await amqp.connect('amqp://localhost');
 
-const channel = await connection.createChannel();
+async function start() {
+    const pool = await amqp.connect('amqp://localhost');
+    const channel = await pool.createChannel();
 
-// Connexion à RabbitMQ
-const queueName = 'ma-file-dattente';
-const message = 'Hello, RabbitMQ!';
-channel.assertQueue(queueName);
-channel.sendToQueue(queueName, Buffer.from(message));
-channel.consume(queueName, (message) => {
-  console.log(`Received message: ${message.content.toString()}`);
+    // Connexion à RabbitMQ
+    const queueName = 'ma-file-dattente';
+    const message = 'Hello, RabbitMQ!';
+    await channel.assertQueue(queueName);
+    channel.sendToQueue(queueName, Buffer.from(message));
+    channel.consume(queueName, (message) => {
+    console.log(`Received message: ${message.content.toString()}`);
 });
 
-// Connexion à la base de données MySQL
-const connection = mysql.createConnection({
+}
+
+start().catch(console.error);
+
+
+
+// Connexion à la base de données Postgres
+const pool = new Pool({
     host: 'localhost',
-    user: 'marine',
-    password: 'root123',
-    database: 'livredb'
+    user: 'myuser',
+    password: 'mypassword',
+    database: 'postgres',
+    port: 5432
 });
 
 // Vérification de la connexion à la base de données
-connection.connect((err) => {
+pool.connect((err) => {
     if (err) {
         console.error('Erreur de connexion à la base de données : ' + err.stack);
         return;
     }
-    console.log('Connecté à la base de données MySQL.');
+    console.log('Connecté à la base de données Postgres.');
 });
 
 
@@ -53,33 +63,33 @@ app.get('/', (req, res) => {
 });
 
 app.get('/livres', (req, res) => {
-    connection.query('SELECT * FROM livres', (error, results) => {
+    pool.query('SELECT * FROM livres', (error, results) => {
         if (error) {
             console.error('Erreur lors de la récupération des livres : ' + error.message);
             res.status(500).json({ message: 'Erreur serveur' });
             return;
         }
 
-        res.json(results);
+        res.json(results.rows);
     });
 });
 
 app.get('/livres/:id', (req, res) => {
     const bookId = req.params.id;
-    connection.query('SELECT * FROM livres WHERE id = ?', [bookId], (error, results) => {
+    pool.query('SELECT * FROM livres WHERE id = ?', [bookId], (error, results) => {
         if (error) {
             console.error('Erreur lors de la récupération du livre : ' + error.message);
             res.status(500).json({ message: 'Erreur serveur' });
             return;
         }
         console.log('Récupération du livre par ID réussie.');
-        res.json(results[0]);
+        res.json(results[0], rows);
     });
 });
 
 app.post('/livres', (req, res) => {
     const newBook = req.body;
-    connection.query('INSERT INTO livres SET ?', newBook, (error, results) => {
+    pool.query('INSERT INTO livres SET ?', newBook, (error, results) => {
         if (error) {
             console.error('Erreur lors de l ajout d un nouveau livre : ' + error.message);
             res.status(500).json({ message: 'Erreur serveur' });
@@ -93,7 +103,7 @@ app.post('/livres', (req, res) => {
 app.put('/livres/:id', (req, res) => {
     const bookId = req.params.id;
     const updatedBook = req.body;
-    connection.query('UPDATE livres SET ? WHERE id = ?', [updatedBook, bookId], (error, results) => {
+    pool.query('UPDATE livres SET ? WHERE id = ?', [updatedBook, bookId], (error, results) => {
         if (error) {
             console.error('Erreur lors de la mise à jour du livre : ' + error.message);
             res.status(500).json({ message: 'Erreur serveur' });
@@ -106,7 +116,7 @@ app.put('/livres/:id', (req, res) => {
 
 app.delete('/livres/:id', (req, res) => {
     const bookId = req.params.id;
-    connection.query('DELETE FROM livres WHERE id = ?', [bookId], (error, results) => {
+    pool.query('DELETE FROM livres WHERE id = ?', [bookId], (error, results) => {
         if (error) {
             console.error('Erreur lors de la suppression du livre : ' + error.message);
             res.status(500).json({ message: 'Erreur serveur' });
