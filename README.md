@@ -53,6 +53,8 @@ Postgres / node.js
 ### Schema 
 ![image](https://github.com/Leadersheepy/H3_microservice/assets/43178189/157db7dd-766e-4722-a8a3-d71e869de563)
 
+> Prometheus est sur le port 9090
+
 ### Récupération des données qui fonctionne
 ![image](https://github.com/Leadersheepy/H3_microservice/assets/43178189/3b64ba9c-407a-4d2a-8dd9-4e8e7801e7f3)
 
