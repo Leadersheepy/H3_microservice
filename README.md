@@ -54,6 +54,7 @@ Postgres / node.js
 ![image](https://github.com/Leadersheepy/H3_microservice/assets/43178189/157db7dd-766e-4722-a8a3-d71e869de563)
 
 > Prometheus est sur le port 9090
+> Postgres 5432
 
 ### Récupération des données qui fonctionne
 ![image](https://github.com/Leadersheepy/H3_microservice/assets/43178189/3b64ba9c-407a-4d2a-8dd9-4e8e7801e7f3)
@@ -90,6 +91,9 @@ https://hub.docker.com/repository/docker/marinouh/biblio/general
 
 ### Test back
 ![image](https://github.com/Leadersheepy/H3_microservice/assets/43178189/ec5e777b-44cb-4b96-b3c9-6de586e58e42)
+
+### Test BDD
+![image](https://github.com/Leadersheepy/H3_microservice/assets/43178189/51acc3b9-8797-4801-9015-88b42e318310)
 
 ### Test lors de l'envoi du projet
 ![image](https://github.com/Leadersheepy/H3_microservice/assets/43178189/7ad4295e-7d52-468a-b8b5-c9c9c29edf94)
