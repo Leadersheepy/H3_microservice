@@ -1,5 +1,8 @@
+---------
+Le projet avec Elasticsearch est fait pour le moment sur un tout autre projet que voici (pour être sur que tout fonctionne correctement) :
+https://github.com/Leadersheepy/Elasticsearch_H3
+--------
 # H3_microservice
-
 > Voici mon Readme qui résume ce que j'ai fait pour le devoir de microservice !
 
 ## Table des matières
